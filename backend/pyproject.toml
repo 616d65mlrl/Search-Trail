@@ -1,0 +1,33 @@
+[project]
+name = "tadori"
+version = "0.1.0"
+description = "Chrome の閲覧履歴から、調べ物の分岐と過去とのつながりをナレッジグラフで見せるローカルアプリ"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    # 画面で選んだ History を受け取る（POST /api/import のファイル送信）
+    "python-multipart>=0.0.9",
+    "sudachidict-core>=20261015",
+    "sudachipy>=0.7.0",
+    "uvicorn>=0.30",
+]
+
+[project.scripts]
+tadori = "tadori.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# 02 システム構成のとおり、src/ を挟まず backend/tadori/ にパッケージを置く
+module-root = ""
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

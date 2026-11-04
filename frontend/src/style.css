@@ -1,0 +1,32 @@
+/* テーマは OS の明暗設定に合わせる（05 画面仕様。暗い背景 #17181B、明るい背景 #F5F5F3） */
+:root {
+  --bg: #f5f5f3;
+  --panel: #ffffff;
+  --fg: #1f2023;
+  --muted: #6b6d73;
+  --line: #e1e1dd;
+  --hover: #ececea;
+  --selected: #e4e1fb;
+  --accent: #5a4bd6;
+  font-family: system-ui, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181b;
+    --panel: #1e1f23;
+    --fg: #e6e6e3;
+    --muted: #9a9ca3;
+    --line: #2e3036;
+    --hover: #2a2c31;
+    --selected: #34305a;
+    --accent: #a59bf7;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}

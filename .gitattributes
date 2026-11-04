@@ -1,0 +1,4 @@
+# 改行コードを LF に揃える（Windows でも同じ。CRLF への変換警告を出さないため）
+* text=auto eol=lf
+# ただし Windows の起動用ファイルは、CRLF の改行でないと正しく動かないことがある
+*.cmd text eol=crlf

@@ -1,0 +1,39 @@
+# 個人情報（閲覧履歴）を絶対にリポジトリへ入れない
+data/
+*.db
+*.db-wal
+*.db-shm
+History
+History-wal
+History-journal
+# テスト用の架空の History は、テスト実行時にスクリプトで作るので保存しない
+backend/tests/fixtures/*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / フロントエンド
+node_modules/
+frontend/dist/
+frontend/coverage/
+
+# エディタ・OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# AI 向けの作業メモ（手元だけで使い、公開しない）
+CLAUDE.md
+
+# 秘密情報
+.env
+.env.*
+
+# 設計書（手元だけで使い、公開しない）
+docs/
